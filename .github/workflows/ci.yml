@@ -39,6 +39,7 @@ jobs:
     steps:
       - name: build
         run: |
+          dsafaerwegbwe56bebt
           sleep 15
           echo "test build" >> build.txt
 
