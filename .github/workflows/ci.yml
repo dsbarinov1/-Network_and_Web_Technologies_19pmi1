@@ -17,31 +17,18 @@ jobs:
       local_env: job
     
     steps:
-      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-      - uses: actions/checkout@v2
-
-      - name: Run a one-line script
-        run: echo Hello, world!
-        
-      - name: user
-        run: uname
-      - name: Path of working directory
-        run: pwd
-      - name: sysinfo
-        run: lshw
-      - name: print env
-        run: echo ${{ github.job }}
+      - name: check tools
+        run: g++ -v
+          
 
   build: # собираем приложение
+    needs: [sys_info]
     runs-on: ubuntu-latest
-    env:
-      local_env: job_print_env
+#    env:
+#      local_env: 
     steps:
       - name: build
-        run: |
-          dsafaerwegbwe56bebt
-          sleep 15
-          echo "test build" >> build.txt
+        run: g++ main.cpp -o app_$ImageOS
 
   test: # тестируем приложение на запуск
     runs-on: ubuntu-latest
