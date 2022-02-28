@@ -14,7 +14,7 @@ jobs:
   sys_info:
     runs-on: ubuntu-latest
     env:
-      local_env: job
+      local_env: "$GITHUB_JOB"
     
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
@@ -30,7 +30,7 @@ jobs:
       - name: sysinfo
         run: lshw
       - name: print env
-        run: echo $GITHUB_JOB
+        run: echo "$GITHUB_JOB"
 
   env:
     runs-on: ubuntu-latest
