@@ -7,11 +7,15 @@ on:
     branches: [ main ]
 
   workflow_dispatch:
-  
+env:
+  global_env: global
+
 jobs:
   sys_info:
     runs-on: ubuntu-latest
-
+    env:
+      local_env: $GITHUB_JOB
+    
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
@@ -25,15 +29,13 @@ jobs:
         run: pwd
       - name: sysinfo
         run: lshw
-        
-        
-      - name: Run a multi-line script
-        run: |
-          echo Add other actions to build,
-          echo test, and deploy your project.
+      - name: print env
+        run: env
 
   env:
     runs-on: ubuntu-latest
+    env:
+      local_env: job_print_env
     steps:
       - name: print env
         run: env
