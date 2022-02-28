@@ -39,7 +39,7 @@ jobs:
     needs: [build, sys_info] # -\\- зависит и от build, и от sys_info
     steps:
       - name: run_test
-        run: sleep 20
+        run: sleep 5
         
   #export:
     #runs-on: ubuntu-latest
