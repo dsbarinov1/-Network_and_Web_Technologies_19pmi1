@@ -30,8 +30,9 @@ jobs:
       - uses: actions/checkout@v2
       - name: build
         run: |
-          g++ main.cpp -o app_${RUNNER_OS}
+          g++ main.cpp -o app_${RUNNER_OS}_ver.${GITHUB_RUN_NUMBER}
           ls -la
+          ll
           echo "App was builded successfully"
 
   test: # тестируем приложение на запуск
