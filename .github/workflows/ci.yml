@@ -1,4 +1,4 @@
-name: new_ci
+name: CI
 
 on:
   push:
@@ -29,7 +29,7 @@ jobs:
     steps:
       - name: build
         run: |
-          #g++ main.cpp -o app_${RUNNER_OS}
+          g++ main.cpp -o app_${RUNNER_OS}
           ls -la
           echo "App was builded successfully"
 
