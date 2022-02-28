@@ -44,8 +44,8 @@ jobs:
 
   test: # тестируем приложение на запуск
     runs-on: ubuntu-latest
-    needs: build # значит, что job: test запустится после build
-    
+    #needs: build # значит, что job: test запустится после build
+    needs: [build, sys_info] # -\\- зависит и от build, и от sys_info
     steps:
       - name: run_test
         run: sleep 20
