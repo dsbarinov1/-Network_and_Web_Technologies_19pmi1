@@ -27,6 +27,7 @@ jobs:
 #    env:
 #      local_env: 
     steps:
+      - uses: actions/checkout@v2
       - name: build
         run: |
           g++ main.cpp -o app_${RUNNER_OS}
