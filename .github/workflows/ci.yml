@@ -32,10 +32,33 @@ jobs:
       - name: print env
         run: echo ${{ github.job }}
 
-  env:
+  build: # собираем приложение
     runs-on: ubuntu-latest
     env:
       local_env: job_print_env
     steps:
-      - name: print env
-        run: env
+      - name: build
+        run: |
+          sleep 15
+          echo "test build" >> build.txt
+
+  test: # тестируем приложение на запуск
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: run_test
+        run: sleep 20
+        
+  #export:
+    #runs-on: ubuntu-latest
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
