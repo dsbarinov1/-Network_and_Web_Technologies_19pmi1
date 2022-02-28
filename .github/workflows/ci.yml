@@ -32,7 +32,7 @@ jobs:
         run: |
           g++ main.cpp -o app_${RUNNER_OS}
           ls -la
-          echo "App was builded"
+          echo "App was builded successfully"
 
   test: # тестируем приложение на запуск
     runs-on: ubuntu-latest
