@@ -30,7 +30,7 @@ jobs:
       - name: sysinfo
         run: lshw
       - name: print env
-        run: echo ${{ env.GITHUB_JOB }}
+        run: echo ${{ github.job }}
 
   env:
     runs-on: ubuntu-latest
